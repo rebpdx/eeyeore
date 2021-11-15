@@ -3,8 +3,7 @@ elixir:
   - '1.9'
 
 env:
-  - MIX_TARGET=rpi3
-  - MIX_ENV=test
+  - MIX_TARGET=rpi3 MIX_ENV=test
 
 install:
   - mix local.rebar --force
