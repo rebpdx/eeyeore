@@ -1,0 +1,23 @@
+language: elixir
+elixir:
+  - '1.4'
+
+env:
+  - MIX_TARGET=rpi3
+
+jobs:
+  include:
+    - stage: fetch
+      script: mix deps.get
+    - stage: build
+      script: mix firmware
+    - stage: test
+      script: mix test
+    - stage: dialyzer
+      script: mix dialyzer
+    - stage: format
+      script: mix format --check-formatted
+
+cache:
+  directories:
+    - priv/plts
