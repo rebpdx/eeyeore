@@ -65,7 +65,7 @@ defmodule Eeyeore.MixProject do
       {:nerves_system_x86_64, "~> 1.8", runtime: false, targets: :x86_64},
 
       # Dependencies for compiling
-      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      {:dialyxir, "~> 1.0", only: :test, runtime: false},
 
       # Dependencies for testing only
       {:mox, "~> 0.5.2", only: :test}

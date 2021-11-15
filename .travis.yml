@@ -8,9 +8,7 @@ env:
 jobs:
   include:
     - stage: fetch
-      script: mix deps.get
-    - stage: build
-      script: mix firmware
+      script: mix deps.get --only test
     - stage: test
       script: mix test
     - stage: dialyzer

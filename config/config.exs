@@ -24,9 +24,5 @@ config :shoehorn,
 
 config :logger, backends: [RingLogger]
 
-if Mix.target() != :host do
-  import_config "target.exs"
-end
-
 import_config "blinkchain/blinkchain.exs"
 import_config "eeyeore.exs"
