@@ -25,11 +25,6 @@ config :shoehorn,
 config :logger, backends: [RingLogger]
 
 # mix local.rebar and local.hex don't support Mix.Target()
-if System.get_env("LOCAL_ONLY") != TRUE do
-  if Mix.target() != :host do
-    import_config "target.exs"
-  end
-
-  import_config "eeyeore.exs"
-  import_config "blinkchain/blinkchain.exs"
+if System.get_env("LOCAL_ONLY") != "TRUE" do
+  import_config "#{Mix.env()}"
 end
