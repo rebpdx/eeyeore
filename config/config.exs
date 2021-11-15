@@ -24,7 +24,12 @@ config :shoehorn,
 
 config :logger, backends: [RingLogger]
 
-import_config "blinkchain/blinkchain.exs"
-# Loading environment based configuration is mostly to keep erlang pre-nerves
-# build from failing
-import_config "#{Mix.env()}.exs"
+# mix local.rebar and local.hex don't support Mix.Target()
+if System.get_env("LOCAL_ONLY") != TRUE do
+  if Mix.target() != :host do
+    import_config "target.exs"
+  end
+
+  import_config "eeyeore.exs"
+  import_config "blinkchain/blinkchain.exs"
+end

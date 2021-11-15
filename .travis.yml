@@ -6,23 +6,15 @@ env:
   - MIX_TARGET=rpi3
 
 install:
+  - LOCAL_ONLY=TRUE mix local.rebar --force
+  - LOCAL_ONLY=TRUE mix local.hex --force
   - mix archive.install hex nerves_bootstrap --force
   - mix deps.get
 
-jobs:
-  include:
-    - stage: test
-      script: mix test
-      env:
-        - MIX_ENV=test
-    - stage: dialyzer
-      script: mix dialyzer
-      env:
-        - MIX_ENV=test
-    - stage: format
-      script: mix format --check-formatted
-      env:
-        - MIX_ENV=test
+script:
+  - mix test
+  - mix dialyzer
+  - mix format --check-formatted
 
 cache:
   directories:
