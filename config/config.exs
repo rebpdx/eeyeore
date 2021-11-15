@@ -23,6 +23,3 @@ config :shoehorn,
 # configuring ring_logger.
 
 config :logger, backends: [RingLogger]
-
-import_config "blinkchain/blinkchain.exs"
-import_config "eeyeore.exs"
