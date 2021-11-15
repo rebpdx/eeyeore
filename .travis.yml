@@ -8,7 +8,7 @@ env:
 install:
   - LOCAL_ONLY=TRUE mix local.rebar --force
   - LOCAL_ONLY=TRUE mix local.hex --force
-  - mix archive.install hex nerves_bootstrap --force
+  - LOCAL_ONLY=TRUE mix archive.install hex nerves_bootstrap --force
   - mix deps.get
 
 script:
