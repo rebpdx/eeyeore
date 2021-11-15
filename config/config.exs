@@ -25,6 +25,4 @@ config :shoehorn,
 config :logger, backends: [RingLogger]
 
 # mix local.rebar and local.hex don't support Mix.Target()
-if System.get_env("LOCAL_ONLY") != "TRUE" do
-  import_config "#{Mix.env()}.exs"
-end
+import_config "#{Mix.env()}.exs"
