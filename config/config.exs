@@ -23,3 +23,8 @@ config :shoehorn,
 # configuring ring_logger.
 
 config :logger, backends: [RingLogger]
+
+import_config "blinkchain/blinkchain.exs"
+# Loading environment based configuration is mostly to keep erlang pre-nerves
+# build from failing
+import_config "#{Mix.env()}.exs"

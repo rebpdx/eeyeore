@@ -11,10 +11,20 @@ install:
   - mix archive.install hex nerves_bootstrap --force
   - mix deps.get
 
-script:
-  - mix test
-  - mix dialyzer
-  - mix format --check-formatted
+jobs:
+  include:
+    - stage: test
+      script: mix test
+      env:
+        - MIX_ENV=test
+    - stage: dialyzer
+      script: mix dialyzer
+      env:
+        - MIX_ENV=test
+    - stage: format
+      script: mix format --check-formatted
+      env:
+        - MIX_ENV=test
 
 cache:
   directories:

@@ -5,4 +5,3 @@ if Mix.target() != :host do
 end
 
 import_config "eeyeore.exs"
-import_config "blinkchain/blinkchain.exs"
