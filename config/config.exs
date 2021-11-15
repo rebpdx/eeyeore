@@ -26,3 +26,6 @@ config :logger, backends: [RingLogger]
 
 # mix local.rebar and local.hex don't support Mix.Target()
 import_config "#{Mix.env()}.exs"
+
+import_config "eeyeore.exs"
+import_config "blinkchain/blinkchain.exs"
