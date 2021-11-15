@@ -1,6 +1,6 @@
 language: elixir
 elixir:
-  - '1.7'
+  - '1.9'
 
 env:
   - MIX_TARGET=rpi3
