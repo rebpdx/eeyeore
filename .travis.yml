@@ -5,16 +5,14 @@ elixir:
 env:
   - MIX_TARGET=rpi3
 
-jobs:
-  include:
-    - stage: fetch
-      script: mix deps.get --only test
-    - stage: test
-      script: mix test
-    - stage: dialyzer
-      script: mix dialyzer
-    - stage: format
-      script: mix format --check-formatted
+before_script:
+  - mix archive.install hex nerves_bootstrap
+  - mix deps.get --only test
+
+script:
+  - mix test
+  - mix dialyzer
+  - mix format --check-formatted
 
 cache:
   directories:
