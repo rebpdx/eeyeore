@@ -1,0 +1,4 @@
+[ Render ]
+[ SettingsManager ] -- Get --> [ Render ] { origin: SettingsManager; offset: -2,0; }
+[ JsonEndpoint ] -- Trigger --> [ Render ]
+[ SettingsManager ] <-- Set/Get --> [ JsonEndpoint ] { origin: SettingsManager; offset: 0,-2; }

@@ -1,0 +1,9 @@
+graph { flow: south; }
+[ SettingsManager ] -- Get --> [ Render ] { origin: SettingsManager; offset: -2,0; }
+[ MqttEndpoint ] <-- Set/Get --> [ SettingsManager ]
+[ SettingsManager] -- Change --> [ MqttEndpoint ]
+[ MqttEndpoint ] -- Trigger --> [ Render ]
+[ MqttEndpoint ] -- MQTT Publish --> [ Tortoise ]
+[ TortoiseHandler ] -- MQTT Receive --> [ MqttEndpoint ]
+[ Tortoise ] -- MQTT Receive --> [ TortoiseHandler ]
+[ MqttBroker ] <-- Message --> [ Tortoise ] { origin: MqttBroker; offset: 2,0; }

@@ -2,6 +2,9 @@
 
 Firmware for a cloud that flashes like lightning.
 
+[![Demo Lightning Cloud](docs/LightningCloud.gif)](https://vimeo.com/646318158)
+
+
 I saw a few examples of people making these clouds out of paper and polyester,
 but wanted something a little more interactive. This project does so by adding a
 network of addressable LED strips in such a layout that it's a web of
